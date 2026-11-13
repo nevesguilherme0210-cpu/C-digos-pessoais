@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memórias · Mavi e gui</title>
+<link rel="icon" type="image/png" href="icones/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * {
+     margin: 0;
+      padding: 0;
+       box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ef 40%, #fff8f0 100%);
+    font-family: 'Lato', sans-serif;
+    padding: 3rem 1.5rem;
+  }
+  .mosaic-header {
+    text-align: center;
+    margin-bottom: 2.2rem;
+  }
+  .mosaic-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c0245a;
+    background: #ffeef5;
+    padding: 5px 18px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 0.9rem;
+  }
+  .mosaic-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d1520;
+    margin: 0 0 0.4rem;
+    line-height: 1.2;
+  }
+  .mosaic-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: #c0245a;
+  }
+  .mosaic-subtitle {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #a06080;
+  }
+  .mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .photo {
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid #f5c8d8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .photo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 40px rgba(192, 36, 90, 0.18);
+    z-index: 2;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1.5rem;
+  }
+  .placeholder-label {
+    opacity: 0.95;
+  }
+
+  .photo.tall {
+     grid-row: span 2; 
+  }
+  .photo.wide {
+     grid-column: span 2; 
+  }
+
+  .photo.tall
+  .placeholder {
+     min-height: 412px; 
+  }
+  .photo.wide
+  .placeholder {
+     min-height: 200px; 
+  }
+
+  .p1 {
+     background: #fdeef4; 
+    }
+  .p2 {
+     background: #fff0f7; 
+    }
+  .p3 {
+     background: #fdf0e8; 
+    }
+  .p4 {
+     background: #fef0f5; 
+    }
+  .p5 {
+     background: #fde8f0; 
+    }
+  .p6 {
+     background: #fff5ec; 
+    }
+  .p7 {
+     background: #fdeef4;
+  
+
+    }
+  .mosaic-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #c0245a;
+    opacity: 0.75;
+  }
+  .teamo{
+    position: sticky;
+    top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    color: #c0245a;
+    font-family: 
+    z-index: -1;
+    font-size: 150px;
+    white-space: nowrap;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+  
+
+  }
+  body{
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<span class="teamo">Te Amo Minha Pitica!</span>
+  <div class="mosaic-header">
+    <span class="mosaic-tag">Memórias · Dia 14</span>
+    <h1 class="mosaic-title">Momentos <em>especiais</em></h1>
+    <p class="mosaic-subtitle">De nossas vidas</p>
+  </div>
+  <div class="mosaic-grid">
+    <div class="photo tall p1">
+        <img class="placeholder-label" src="imagens/7.jpeg">
+    </div>   
+    <div class="photo p2">     
+        <img class="placeholder-label" src="imagens/2.jpeg">   
+    </div>  
+    <div class="photo p3">    
+        <img class="placeholder-label" src="imagens/3.jpeg">  
+    </div>    
+    <div class="photo p4">     
+        <img class="placeholder-label" src="imagens/4.jpeg">   
+    </div>    
+    <div class="photo p5">      
+        <img class="placeholder-label" src="imagens/5.jpeg">    
+    </div>    
+    <div class="photo wide p6">    
+        <img class="placeholder-label" src="imagens/1.jpeg">
+    </div>
+    <div class="photo p7">
+        <img class="placeholder-label" src="imagens/6.jpeg">
+    </div>
+  </div>
+  <p class="mosaic-footer">Com todo o amor do Mundo ✨</p>
+  <script>
+  window.addEventListener('scroll', function() {
+    const teamo = document.querySelector('.teamo');
+    const scrollY = window.scrollY;
+    const tamanho = Math.max(1, 150 - scrollY * 0.3);
+    const opacidade = Math.max(0, 0.8 - scrollY * 0.001);
+    teamo.style.fontSize = tamanho + 'px';
+    teamo.style.opacity = opacidade;
+  });
+</script>
+</body>
+</html>

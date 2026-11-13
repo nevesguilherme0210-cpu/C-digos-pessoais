@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Dia Nosso Dia, Meu Amor!</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="icones/favicon.ico">
+<style>
+  * { margin: 5px; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ef 40%, #fff8f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .card {
+    max-width: 50%;
+    width: 95%;
+    background: rgba(255,255,255,0.85);
+    border-radius: 28px;
+    box-shadow: 0 12px 60px rgba(210, 80, 120, 0.13);
+    padding: 3.5rem 3rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, #ffd6e8 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, #ffe4bc 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .flowers {
+    font-size: 2.5rem;
+    letter-spacing: 0.4rem;
+    margin-bottom: 1.2rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+  }
+
+  .subtitle-tag {
+    display: inline-block;
+    background: linear-gradient(90deg, #f9a8c9, #f9c7a8);
+    color: #8b2252;
+    font-size: 0.7rem;
+    font-weight: 10;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 0.3rem;
+    font-style: italic;
+  }
+  .amor{
+    display: inline-block;
+    
+    color: #bd2f6f;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 6px 6px;
+    border-radius: 50px;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    font-style: italic;
+  }
+  .subtitle-tag2 {
+    display: inline-block;
+    background: linear-gradient(90deg, #f9a8c9, #f9c7a8);
+    color: #8b2252;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 1.4rem;
+    transition: margin-bottom, font-size, padding, font-size  0.3s;
+    text-decoration: none;
+  }
+  .subtitle-tag2:hover {
+    display: inline-block;
+    background: linear-gradient(90deg, #f9a8c9, #f9c7a8);
+    color: #8b2252;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: #c0245a;
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: #e05a8a;
+  }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #f9a8c9, #f9c7a8);
+    border-radius: 2px;
+    margin: 1.4rem auto;
+  }
+
+  .message {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1.08rem;
+    color: #6b3357;
+    line-height: 1.85;
+    max-width: 460px;
+    margin: 0 auto 2rem;
+  }
+
+  .message strong {
+    font-weight: 400;
+    color: #c0245a;
+  }
+
+  .signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .signature-line {
+    width: 40px;
+    height: 1px;
+    background: #f9a8c9;
+  }
+
+  .signature-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #d4607a;
+  }
+
+  .petals {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .petal {
+    position: absolute;
+    font-size: 1.1rem;
+    opacity: 0;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-30px) rotate(0deg); opacity: 0.7; }
+    80% { opacity: 0.4; }
+    100% { transform: translateY(700px) rotate(360deg); opacity: 0; }
+  }
+
+  .heart-row {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .heart {
+    font-size: 1.1rem;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  .heart:nth-child(2) {
+    animation-delay: 0.2s;
+    font-size: 1.4rem; 
+    }
+  .heart:nth-child(3) {
+    animation-delay: 0.4s;
+    }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+  }
+  .fotos{
+    text-decoration: none;
+    color: #8b2252;
+    padding: 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="petals" id="petals"></div>
+
+  <div class="flowers">🌷❤️​🌺</div>
+  <div class="menu1">
+    <span class="subtitle-tag">Nosso dia,<p class="amor">Amor</p>· 14/11/2026</span>
+  </div>
+  <div class="menu2">
+    <span class="subtitle-tag2"><a href="Memórias.html" class="fotos" target="_blank">Memórias</a></span>
+  </div>
+
+  <h1>Feliz Nosso Dia,<br><em>Amor!</em></h1>
+
+  <div class="divider"></div>
+
+  <p class="message">
+    Hoje é um dia mais do que especial para celebrar quem, além de ser a minha companheira de todas as horas, carrega a luz, a garra e a doçura que <strong>tornam a minha vida muito melhor.</strong>
+    Que este dia seja repleto de amor, alegria e gratidão, pois <strong>você é a luz que guia os meus passos</strong> e o melhor abraço para o qual eu sempre quero voltar. Muito obrigado por ser exatamente quem você é e por tudo o que compartilhamos!
+
+  </p>
+
+  <div class="signature">
+    <div class="signature-line"></div>
+    <span class="signature-text">Com todo o amor do Mundo ✨</span>
+    <div class="signature-line"></div>
+  </div>
+
+  <div class="heart-row">
+    <span class="heart">🤍</span>
+    <span class="heart">💖</span>
+    <span class="heart">🤍</span>
+  </div>
+</div>
+
+</body>
+</html>
