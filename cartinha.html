@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carta · Feliz Dia 14, Meu Amor!</title>
+<link rel="icon" type="image/png" href="icones/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ef 40%, #fff8f0 100%);
+    font-family: 'Lato', sans-serif;
+    padding: 1rem 1.5rem 3rem;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  /* ===== Barra de navegação redonda ===== */
+  .nav {
+    position: sticky;
+    top: 12px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .nav-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid #f5c8d8;
+    border-radius: 50px;
+    padding: 6px;
+    box-shadow: 0 8px 30px rgba(210, 80, 120, 0.15);
+  }
+
+  .nav-pill a {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #8b2252;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav-pill a:hover {
+    background: #ffeef5;
+    color: #c0245a;
+    transform: translateY(-1px);
+  }
+
+  .nav-pill a.ativo {
+    background: linear-gradient(90deg, #f9a8c9, #f9c7a8);
+    color: #8b2252;
+  }
+
+  /* ===== Cartão da carta ===== */
+  .card {
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 28px;
+    box-shadow: 0 12px 60px rgba(210, 80, 120, 0.13);
+    padding: 3.5rem 3rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, #ffd6e8 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, #ffe4bc 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .flowers {
+    font-size: 2.5rem;
+    letter-spacing: 0.4rem;
+    margin-bottom: 1.2rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+  }
+
+  .subtitle-tag {
+    display: inline-block;
+    background: linear-gradient(90deg, #f9a8c9, #f9c7a8);
+    color: #8b2252;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 1.4rem;
+    font-style: italic;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: #c0245a;
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: #e05a8a;
+  }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #f9a8c9, #f9c7a8);
+    border-radius: 2px;
+    margin: 1.4rem auto 2rem;
+  }
+
+  .carta {
+    position: relative;
+    text-align: left;
+  }
+
+  .carta p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1.08rem;
+    color: #6b3357;
+    line-height: 1.9;
+    margin-bottom: 1.4rem;
+  }
+
+  .carta p:first-child::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #c0245a;
+    line-height: 1;
+  }
+
+  .carta strong {
+    font-weight: 400;
+    color: #c0245a;
+  }
+
+  .signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 2rem;
+  }
+
+  .signature-line {
+    width: 40px;
+    height: 1px;
+    background: #f9a8c9;
+  }
+
+  .signature-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #d4607a;
+  }
+
+  .heart-row {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .heart {
+    font-size: 1.1rem;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  .heart:nth-child(2) {
+    animation-delay: 0.2s;
+    font-size: 1.4rem;
+  }
+  .heart:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+  }
+
+  /* ===== Responsivo: tablets ===== */
+  @media (max-width: 900px) {
+    .card {
+      padding: 3rem 2rem 2.5rem;
+    }
+    h1 { font-size: 2.3rem; }
+  }
+
+  /* ===== Responsivo: celulares ===== */
+  @media (max-width: 600px) {
+    body {
+      padding: 0.8rem 0.8rem 2rem;
+    }
+    .nav {
+      top: 8px;
+      margin-bottom: 1.4rem;
+    }
+    .nav-pill {
+      gap: 2px;
+      padding: 4px;
+    }
+    .nav-pill a {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      padding: 9px 13px;
+    }
+    .card {
+      padding: 2.2rem 1.3rem 2rem;
+      border-radius: 22px;
+    }
+    .flowers {
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+    }
+    .subtitle-tag {
+      font-size: 0.62rem;
+      padding: 6px 12px;
+      letter-spacing: 0.18em;
+    }
+    h1 {
+      font-size: 1.9rem;
+    }
+    .carta p {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .signature-text {
+      font-size: 1.05rem;
+    }
+    .card::before,
+    .card::after {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  /* ===== Responsivo: celulares pequenos ===== */
+  @media (max-width: 380px) {
+    .nav-pill a {
+      font-size: 9px;
+      padding: 8px 10px;
+    }
+    .card {
+      padding: 1.8rem 1rem 1.6rem;
+    }
+    h1 {
+      font-size: 1.65rem;
+    }
+    .carta p {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <nav class="nav-pill">
+    <a href="index.html">Início</a>
+    <a href="Memórias.html">Memórias</a>
+    <a href="carta.html" class="ativo">Carta</a>
+  </nav>
+</header>
+
+<div class="card">
+  <div class="flowers">🌷❤️🌺</div>
+  <span class="subtitle-tag">Carta · 14/11/2026</span>
+
+  <h1>Feliz Dia 14,<br><em>meu amor!!!</em></h1>
+
+  <div class="divider"></div>
+
+  <div class="carta">
+    <p>
+      Oi meu amor, queria passar aqui para comemorar nosso primeiro mês juntos, aprendi muita coisa nesse 1º mês, muitas histórias, pessoas e a principal: <strong>muito amor!</strong>
+    </p>
+
+    <p>
+      Você me faz sentir o que o "amor" realmente é, mostrando que nem sempre são só flores, vamos nos desentender algumas vezes. E é quando isso acontece que é possível perceber o "amor" de verdade, nos sentamos, conversamos e fazemos com que a gente se entenda após isso. Logicamente isso exige esforço e é difícil, porém saiba que <strong>prefiro passar por dificuldades ao seu lado, do que não passar por nenhuma sozinho.</strong> Como eu sempre digo, <strong>você é com certeza minha melhor escolha diária.</strong>
+    </p>
+
+    <p>
+      Além disso, quero te agradecer por ser paciente comigo e se dispor a ter conversas difíceis com o objetivo de nosso relacionamento seguir sempre firme e forte.
+    </p>
+
+    <p>
+      Durante esse tempo percebi que <strong>eu te amo como nunca amei antes.</strong> Fizemos nossa primeira viagem juntos e passar três dias seguidos ao seu lado foi simplesmente incrível, a cada dia que se passava e quando parava, meus brilhos no olhar em relação a você só aumentava e continua aumentando.
+    </p>
+  </div>
+
+  <div class="signature">
+    <div class="signature-line"></div>
+    <span class="signature-text">Eu te amo, minha Pitica ♡♡♡</span>
+    <div class="signature-line"></div>
+  </div>
+
+  <div class="heart-row">
+    <span class="heart">🤍</span>
+    <span class="heart">💖</span>
+    <span class="heart">🤍</span>
+  </div>
+</div>
+
+</body>
+</html>

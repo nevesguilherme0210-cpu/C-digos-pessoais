@@ -222,9 +222,182 @@
     color: #8b2252;
     padding: 30px;
   }
+
+  /* ===== Responsivo: tablets ===== */
+  @media (max-width: 900px) {
+    .card {
+      max-width: 85%;
+      padding: 3rem 2rem 2.5rem;
+    }
+    h1 { font-size: 2.3rem; }
+  }
+
+  /* ===== Responsivo: celulares ===== */
+  @media (max-width: 600px) {
+    body {
+      align-items: flex-start;
+    }
+    .card {
+      max-width: 100%;
+      width: 100%;
+      padding: 2.2rem 1.3rem 2rem;
+      border-radius: 22px;
+    }
+    .flowers {
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    .subtitle-tag {
+      font-size: 0.62rem;
+      padding: 6px 12px;
+      letter-spacing: 0.18em;
+    }
+    .amor {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+    }
+    .subtitle-tag2 {
+      font-size: 10px;
+      padding: 8px 14px;
+    }
+    .fotos {
+      padding: 14px 10px;
+    }
+    h1 {
+      font-size: 1.9rem;
+    }
+    .message {
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .signature-text {
+      font-size: 0.95rem;
+    }
+    .heart-row {
+      margin-top: 1.5rem;
+    }
+    .card::before,
+    .card::after {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  /* ===== Responsivo: celulares pequenos ===== */
+  @media (max-width: 380px) {
+    .card {
+      padding: 1.8rem 1rem 1.6rem;
+    }
+    h1 {
+      font-size: 1.65rem;
+    }
+    .message {
+      font-size: 0.95rem;
+    }
+    .flowers {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* ===== Barra de navegação redonda ===== */
+  body {
+    padding-top: 4.5rem;
+  }
+
+  .nav,
+  .nav-pill,
+  .nav-pill a {
+    margin: 0;
+  }
+
+  .nav {
+    position: fixed;
+    top: 12px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .nav-pill {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid #f5c8d8;
+    border-radius: 50px;
+    padding: 6px;
+    box-shadow: 0 8px 30px rgba(210, 80, 120, 0.15);
+  }
+
+  .nav-pill a {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #8b2252;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav-pill a:hover {
+    background: #ffeef5;
+    color: #c0245a;
+    transform: translateY(-1px);
+  }
+
+  .nav-pill a.ativo {
+    background: linear-gradient(90deg, #f9a8c9, #f9c7a8);
+    color: #8b2252;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding-top: 4rem;
+    }
+    .nav {
+      top: 8px;
+    }
+    .nav-pill {
+      gap: 2px;
+      padding: 4px;
+    }
+    .nav-pill a {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      padding: 9px 13px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .nav-pill a {
+      font-size: 9px;
+      padding: 8px 10px;
+    }
+  }
 </style>
 </head>
 <body>
+
+<header class="nav">
+  <nav class="nav-pill">
+    <a href="index.html" class="ativo">Início</a>
+    <a href="Memórias.html">Memórias</a>
+    <a href="cartinha.html">Carta</a>
+  </nav>
+</header>
 
 <div class="card">
   <div class="petals" id="petals"></div>
@@ -232,9 +405,6 @@
   <div class="flowers">🌷❤️​🌺</div>
   <div class="menu1">
     <span class="subtitle-tag">Nosso dia,<p class="amor">Amor</p>· 14/11/2026</span>
-  </div>
-  <div class="menu2">
-    <span class="subtitle-tag2"><a href="Memórias.html" class="fotos" target="_blank">Memórias</a></span>
   </div>
 
   <h1>Feliz Nosso Dia,<br><em>Amor!</em></h1>
